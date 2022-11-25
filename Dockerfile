@@ -5,8 +5,8 @@ ENV TZ=Europe/Rome
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install --yes build-essential libopenmpi-dev python3.9 python3.9-dev python3-pip ssh openmpi-bin
 RUN python3.9 -m pip install --upgrade pip wheel
-RUN python3.9 -m pip install numpy plotly matplotlib voxcell ipywidgets elephant neuron jupyterlab scikit-image
-RUN python3.9 -m pip install "bsb[neuron]>=4.0.0a43.dev0"
+RUN python3.9 -m pip install numpy plotly matplotlib voxcell ipywidgets elephant neuron jupyterlab scikit-image seaborn lxml
+RUN python3.9 -m pip install "bsb[neuron]>=4.0.0a43.dev2"
 RUN apt-get clean
 COPY entrypoint.sh /usr/local/bin/
 
